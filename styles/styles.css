@@ -1,0 +1,134 @@
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: #f9f9f9;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+header h1 {
+  font-size: 1.5rem;
+  color: #333;
+  margin: 0;
+}
+@media (min-width: 768px) {
+  header h1 {
+    font-size: 2.5rem;
+  }
+}
+header h2 {
+  font-size: 1rem;
+  color: #ff5722;
+  margin: 0;
+}
+@media (min-width: 768px) {
+  header h2 {
+    font-size: 1.5rem;
+  }
+}
+
+h3 {
+  color: #2196F3;
+  font-weight: normal;
+}
+
+#game-container {
+  padding: 20px;
+  max-width: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+#letter-input {
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #333;
+  border-radius: 5px;
+  width: 100px;
+  text-align: center;
+}
+
+#guess-button,
+#play-again-button {
+  background-color: #ff5722;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.3s ease;
+  margin-top: 10px;
+}
+#guess-button:hover,
+#play-again-button:hover {
+  background-color: #ee3900;
+}
+
+#hangman-image {
+  max-width: 100%;
+  height: auto;
+}
+
+#result-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100vw;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#result-container div {
+  background: #ccc;
+  width: 350px;
+  height: 350px;
+  border-radius: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 8;
+}
+
+@media (min-width: 768px) {
+  body {
+    padding: 20px;
+  }
+  #game-container {
+    padding: 30px;
+  }
+}
+@media (min-width: 1024px) {
+  #game-container {
+    padding: 40px;
+  }
+  header h1 {
+    font-size: 2rem;
+  }
+}
+@media (min-width: 1024px) and (min-width: 768px) {
+  header h1 {
+    font-size: 3rem;
+  }
+}
+@media (min-width: 1024px) {
+  header h2 {
+    font-size: 1.5rem;
+  }
+}
+@media (min-width: 1024px) and (min-width: 768px) {
+  header h2 {
+    font-size: 2rem;
+  }
+}/*# sourceMappingURL=styles.css.map */

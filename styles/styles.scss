@@ -1,0 +1,143 @@
+$primary-color: #333;
+$secondary-color: #ff5722;
+$background-color: #f9f9f9;
+$accent-color: #2196F3;
+$font-family: 'Roboto', sans-serif;
+$max-width: 600px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 1024px;
+
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin button-style($bg-color) {
+    background-color: $bg-color;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+        background-color: darken($bg-color, 10%);
+    }
+}
+
+@mixin responsive-font($size-mobile, $size-desktop) {
+    font-size: $size-mobile;
+
+    @media (min-width: $breakpoint-md) {
+        font-size: $size-desktop;
+    }
+}
+
+body {
+    font-family: $font-family;
+    background-color: $background-color;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    @include flex-center;
+    flex-direction: column;
+}
+
+header {
+    h1 {
+        @include responsive-font(1.5rem, 2.5rem);
+        color: $primary-color;
+        margin: 0;
+    }
+    h2 {
+        @include responsive-font(1rem, 1.5rem);
+        color: $secondary-color;
+        margin: 0;
+    }
+}
+
+h3 {
+    color: $accent-color;
+    font-weight: normal;
+}
+
+#game-container {
+    padding: 20px;
+    max-width: $max-width;
+    @include flex-center;
+    flex-direction: column;
+    text-align: center;
+}
+
+#letter-input {
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #333;
+    border-radius: 5px;
+    width: 100px;
+    text-align: center;
+}
+
+#guess-button,
+#play-again-button {
+    @include button-style($secondary-color);
+    margin-top: 10px;
+}
+
+#hangman-image {
+    max-width: 100%;
+    height: auto;
+}
+
+#result-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100vw;
+    background: rgba(0, 0, 0, 0.4);
+
+    
+    @include flex-center;
+}
+
+#result-container div{
+    background: #ccc;
+    width: 350px;
+    height: 350px;
+
+    border-radius: 0.5rem;
+    @include flex-center;
+    flex-direction: column;
+    gap: 8;
+    
+    
+}
+
+@media (min-width: $breakpoint-md) {
+    body {
+        padding: 20px;
+    }
+
+    #game-container {
+        padding: 30px;
+    }
+}
+
+@media (min-width: $breakpoint-lg) {
+    #game-container {
+        padding: 40px;
+    }
+
+    header {
+        h1 {
+            @include responsive-font(2rem, 3rem);
+        }
+        h2 {
+            @include responsive-font(1.5rem, 2rem);
+        }
+    }
+}
